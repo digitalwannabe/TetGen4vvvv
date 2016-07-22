@@ -1,0 +1,124 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  predicates.cxx
+  tetgen.cxx
+tetgen.cxx(3189): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+tetgen.cxx(11145): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+tetgen.cxx(27306): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27306): note: consider using '%llx' in the format string
+  tetgen.cxx(27306): note: consider using '%Ix' in the format string
+  tetgen.cxx(27306): note: consider using '%I64x' in the format string
+tetgen.cxx(27309): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27309): note: consider using '%llx' in the format string
+  tetgen.cxx(27309): note: consider using '%Ix' in the format string
+  tetgen.cxx(27309): note: consider using '%I64x' in the format string
+tetgen.cxx(27317): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27317): note: consider using '%llx' in the format string
+  tetgen.cxx(27317): note: consider using '%Ix' in the format string
+  tetgen.cxx(27317): note: consider using '%I64x' in the format string
+tetgen.cxx(27320): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27320): note: consider using '%llx' in the format string
+  tetgen.cxx(27320): note: consider using '%Ix' in the format string
+  tetgen.cxx(27320): note: consider using '%I64x' in the format string
+tetgen.cxx(27329): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27329): note: consider using '%llx' in the format string
+  tetgen.cxx(27329): note: consider using '%Ix' in the format string
+  tetgen.cxx(27329): note: consider using '%I64x' in the format string
+tetgen.cxx(27332): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27332): note: consider using '%llx' in the format string
+  tetgen.cxx(27332): note: consider using '%Ix' in the format string
+  tetgen.cxx(27332): note: consider using '%I64x' in the format string
+tetgen.cxx(27346): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27346): note: consider using '%llx' in the format string
+  tetgen.cxx(27346): note: consider using '%Ix' in the format string
+  tetgen.cxx(27346): note: consider using '%I64x' in the format string
+tetgen.cxx(27349): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27349): note: consider using '%llx' in the format string
+  tetgen.cxx(27349): note: consider using '%Ix' in the format string
+  tetgen.cxx(27349): note: consider using '%I64x' in the format string
+tetgen.cxx(27355): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27355): note: consider using '%llx' in the format string
+  tetgen.cxx(27355): note: consider using '%Ix' in the format string
+  tetgen.cxx(27355): note: consider using '%I64x' in the format string
+tetgen.cxx(27358): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27358): note: consider using '%llx' in the format string
+  tetgen.cxx(27358): note: consider using '%Ix' in the format string
+  tetgen.cxx(27358): note: consider using '%I64x' in the format string
+tetgen.cxx(27372): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27372): note: consider using '%llx' in the format string
+  tetgen.cxx(27372): note: consider using '%Ix' in the format string
+  tetgen.cxx(27372): note: consider using '%I64x' in the format string
+tetgen.cxx(27375): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27375): note: consider using '%llx' in the format string
+  tetgen.cxx(27375): note: consider using '%Ix' in the format string
+  tetgen.cxx(27375): note: consider using '%I64x' in the format string
+tetgen.cxx(27381): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27381): note: consider using '%llx' in the format string
+  tetgen.cxx(27381): note: consider using '%Ix' in the format string
+  tetgen.cxx(27381): note: consider using '%I64x' in the format string
+tetgen.cxx(27384): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27384): note: consider using '%llx' in the format string
+  tetgen.cxx(27384): note: consider using '%Ix' in the format string
+  tetgen.cxx(27384): note: consider using '%I64x' in the format string
+tetgen.cxx(27394): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27394): note: consider using '%llx' in the format string
+  tetgen.cxx(27394): note: consider using '%Ix' in the format string
+  tetgen.cxx(27394): note: consider using '%I64x' in the format string
+tetgen.cxx(27397): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27397): note: consider using '%llx' in the format string
+  tetgen.cxx(27397): note: consider using '%Ix' in the format string
+  tetgen.cxx(27397): note: consider using '%I64x' in the format string
+tetgen.cxx(27409): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27409): note: consider using '%llx' in the format string
+  tetgen.cxx(27409): note: consider using '%Ix' in the format string
+  tetgen.cxx(27409): note: consider using '%I64x' in the format string
+tetgen.cxx(27412): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27412): note: consider using '%llx' in the format string
+  tetgen.cxx(27412): note: consider using '%Ix' in the format string
+  tetgen.cxx(27412): note: consider using '%I64x' in the format string
+tetgen.cxx(27494): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27494): note: consider using '%llx' in the format string
+  tetgen.cxx(27494): note: consider using '%Ix' in the format string
+  tetgen.cxx(27494): note: consider using '%I64x' in the format string
+tetgen.cxx(27494): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 6 has type 'uintptr_t'
+  tetgen.cxx(27494): note: consider using '%llx' in the format string
+  tetgen.cxx(27494): note: consider using '%Ix' in the format string
+  tetgen.cxx(27494): note: consider using '%I64x' in the format string
+tetgen.cxx(27507): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27507): note: consider using '%llx' in the format string
+  tetgen.cxx(27507): note: consider using '%Ix' in the format string
+  tetgen.cxx(27507): note: consider using '%I64x' in the format string
+tetgen.cxx(27512): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27512): note: consider using '%llx' in the format string
+  tetgen.cxx(27512): note: consider using '%Ix' in the format string
+  tetgen.cxx(27512): note: consider using '%I64x' in the format string
+tetgen.cxx(27531): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 1 has type 'uintptr_t'
+  tetgen.cxx(27531): note: consider using '%llx' in the format string
+  tetgen.cxx(27531): note: consider using '%Ix' in the format string
+  tetgen.cxx(27531): note: consider using '%I64x' in the format string
+tetgen.cxx(27531): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 6 has type 'uintptr_t'
+  tetgen.cxx(27531): note: consider using '%llx' in the format string
+  tetgen.cxx(27531): note: consider using '%Ix' in the format string
+  tetgen.cxx(27531): note: consider using '%I64x' in the format string
+tetgen.cxx(27548): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 5 has type 'uintptr_t'
+  tetgen.cxx(27548): note: consider using '%llx' in the format string
+  tetgen.cxx(27548): note: consider using '%Ix' in the format string
+  tetgen.cxx(27548): note: consider using '%I64x' in the format string
+tetgen.cxx(27557): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 5 has type 'uintptr_t'
+  tetgen.cxx(27557): note: consider using '%llx' in the format string
+  tetgen.cxx(27557): note: consider using '%Ix' in the format string
+  tetgen.cxx(27557): note: consider using '%I64x' in the format string
+tetgen.cxx(27603): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 5 has type 'uintptr_t'
+  tetgen.cxx(27603): note: consider using '%llx' in the format string
+  tetgen.cxx(27603): note: consider using '%Ix' in the format string
+  tetgen.cxx(27603): note: consider using '%I64x' in the format string
+tetgen.cxx(27623): warning C4477: 'printf' : format string '%lx' requires an argument of type 'unsigned long', but variadic argument 4 has type 'uintptr_t'
+  tetgen.cxx(27623): note: consider using '%llx' in the format string
+  tetgen.cxx(27623): note: consider using '%Ix' in the format string
+  tetgen.cxx(27623): note: consider using '%I64x' in the format string
+  Tetgen4vvvv.cpp
+     Creating library X:\_dev\Visual Studio 2015\Projects\TetgenDLL\x64\Release\TetGen2vvvv.lib and object X:\_dev\Visual Studio 2015\Projects\TetgenDLL\x64\Release\TetGen2vvvv.exp
+  Generating code
+  All 411 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Tetgen4vvvv.vcxproj -> X:\_dev\Visual Studio 2015\Projects\TetgenDLL\x64\Release\TetGen2vvvv.dll
