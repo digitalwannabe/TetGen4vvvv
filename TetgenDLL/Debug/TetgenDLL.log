@@ -1,5 +1,0 @@
-﻿  TetgenDLL.cpp
-x:\_dev\visual studio 2015\projects\tetgendll\tetgendll\tetgendll.cpp(146): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-x:\_dev\visual studio 2015\projects\tetgendll\tetgendll\tetgendll.cpp(147): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  TetgenDLL.vcxproj -> X:\_dev\Visual Studio 2015\Projects\TetgenDLL\Debug\TetgenDLL\TetgenDLL.dll
-  TetgenDLL.vcxproj -> X:\_dev\Visual Studio 2015\Projects\TetgenDLL\Debug\TetgenDLL\TetgenDLL.pdb (Partial PDB)
