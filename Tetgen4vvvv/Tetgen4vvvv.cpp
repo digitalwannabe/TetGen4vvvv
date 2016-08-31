@@ -7,10 +7,10 @@ namespace TTGN {
 	tetgenio in, outa;
 	tetgenio::facet *f;
 	tetgenio::polygon *p;
-	
 
 	double* tetCalculate(int *retSize, char *behaviour, double *vertXYZ, int *numPoly, int *numVertices, int *vertIndex, int *numFHoles, double *fHoleXYZ, int *facetMarker, double *HoleXYZ, double *RegionXYZ, double *RegionAttrib, double *RegionVolConst, int *binSizes, char* fileName)
 	{
+		
 		
 
 		// All indices start from 1.
@@ -114,11 +114,9 @@ namespace TTGN {
 		//   do quality mesh generation (q) with a specified quality bound
 		//   (1.414), and apply a maximum volume constraint (a0.1).
 
-		//	tetrahedralize("pq1.414a0.1", &in, &outa);
-
-//		try {
-
 			tetrahedralize(behaviour, &in, &outa);
+
+
 
 			// Output mesh to files 'barout.node', 'barout.ele' and 'barout.face'.
 
@@ -132,15 +130,7 @@ namespace TTGN {
 				outa.save_nodes(fileNameOut);
 				outa.save_elements(fileNameOut);
 				outa.save_faces(fileNameOut);
-			}
-/*		}
-		catch (...) { //how to get error codes in vvvv?
-
-		}
-
-		
-*/
-		
+			}		
 
 		int nOfPoints = outa.numberofpoints;
 		int nOfPointsXYZ = outa.numberofpoints*3;
@@ -173,9 +163,11 @@ namespace TTGN {
 			retArr[j] = outa.tetrahedronlist[i];
 		}
 		
-		//	outa.deinitialize();
+		in.deinitialize();
+		outa.deinitialize();
 
 		return retArr;
+		delete[] retArr;
 	}
 
 
@@ -184,7 +176,6 @@ namespace TTGN {
 		delete[] pArray;
 //		in.deinitialize();
 //		outa.deinitialize();
-		//delete[] Usize;
 		return 0;
 	}
 
