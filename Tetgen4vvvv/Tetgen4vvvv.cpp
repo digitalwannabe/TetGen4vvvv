@@ -2,17 +2,18 @@
 #include "Tetgen4vvvv.h"
 #include "tetgen.h"
 
+
 namespace TTGN {
 
 	tetgenio in, outa;
 	tetgenio::facet *f;
 	tetgenio::polygon *p;
 
-	double* tetCalculate(int *retSize, char *behaviour, double *vertXYZ, int *numPoly, int *numVertices, int *vertIndex, int *numFHoles, double *fHoleXYZ, int *facetMarker, double *HoleXYZ, double *RegionXYZ, double *RegionAttrib, double *RegionVolConst, int *binSizes, char* fileName)
+	int nOfPoints,nOfPointsXYZ,nOfTriIndices,nOfTet,nOfTetIndices,nOfFaces, nOfTetAttr, nOfPointAttr, computeNeighbors, computeRegionAttributes;
+
+	int* tetCalculate(/*int *retSize,*/ char *behaviour, double *vertXYZ, double *vertAttr, int *vertMarker, int *numPoly, int *numVertices, int *vertIndex, int *numFHoles, double *fHoleXYZ, int *facetMarker, double *HoleXYZ, double *RegionXYZ, double *RegionAttrib, double *RegionVolConst, int *binSizes, char* fileName)
 	{
 		
-		
-
 		// All indices start from 1.
 		in.firstnumber = 1;//DW: won't work with 0
 
@@ -22,27 +23,38 @@ namespace TTGN {
 		int numRegions = binSizes[3];
 		int doWriteIn = binSizes[4];
 		int doWriteOut = binSizes[5];
+		computeNeighbors = binSizes[6];
+		computeRegionAttributes = binSizes[7];
 
 		int polygons = 0;
 		int vertices = 0;
 		int fHoles = 0;
 
+	
 		//POINTS
 
 		in.numberofpoints = numPoints;
 		in.pointlist = new REAL[in.numberofpoints * 3];
-		for (int i = 0; i < numPoints * 3; i++) {
-			in.pointlist[i] = vertXYZ[i];
+		
+//		in.numberofpointattributes = 1; //anything else possible?
+		in.pointattributelist = new REAL[in.numberofpoints];
+		in.pointmarkerlist = new int[in.numberofpoints];
+		for (int i = 0; i < numPoints; i++) {
+			for (int j = 0; j < 3; j++) {
+				in.pointlist[i*3+j] = vertXYZ[i*3+j];
+			}
+			in.pointattributelist[i] = vertAttr[i];
+			in.pointmarkerlist[i] = vertMarker[i];
 		}
 		
-
+		
 		//FACETS
 
 		in.numberoffacets = numFacets;
 		in.facetlist = new tetgenio::facet[in.numberoffacets];
 		in.facetmarkerlist = new int[in.numberoffacets];
 		
-	
+		
 		for (int facetID = 0; facetID < numFacets; facetID++) {
 			f = &in.facetlist[facetID];
 			f->numberofpolygons = numPoly[facetID];
@@ -105,6 +117,11 @@ namespace TTGN {
 		else {
 			in.regionlist = NULL;
 		}
+
+
+		
+
+
 		if (doWriteIn) {
 			in.save_nodes(fileName);
 			in.save_poly(fileName);
@@ -130,46 +147,80 @@ namespace TTGN {
 				outa.save_nodes(fileNameOut);
 				outa.save_elements(fileNameOut);
 				outa.save_faces(fileNameOut);
+				if (computeNeighbors) {
+					outa.save_neighbors(fileNameOut);
+				}
 			}		
 
-		int nOfPoints = outa.numberofpoints;
-		int nOfPointsXYZ = outa.numberofpoints*3;
-		int nOfTriIndices = outa.numberoftrifaces * 3;
-		int nOfTet = outa.numberoftetrahedra;
-		int nOfTetIndices = outa.numberoftetrahedra*4;
-
-		int nOfAllEntries = 3 + nOfPointsXYZ + nOfTriIndices + nOfTetIndices;
-
-		*retSize = nOfAllEntries;
+		nOfPoints = outa.numberofpoints;
+		nOfPointsXYZ = outa.numberofpoints*3;
+		nOfTriIndices = outa.numberoftrifaces * 3;
+		nOfTet = outa.numberoftetrahedra;
+		nOfTetIndices = outa.numberoftetrahedra*4;
+		nOfFaces = outa.numberoftrifaces;
+		nOfTetAttr = outa.numberoftetrahedronattributes;
+		nOfPointAttr = outa.numberofpointattributes;
 		
-		double* retArr = new double[nOfAllEntries];
-		//	char* commands = "pq1.414a0.1";
-		//	retArr.size = 3;
+//		int nOfAllEntries = 6;
 
-		retArr[0] = (double)nOfPoints;
-		retArr[1] = (double)nOfTriIndices;
-		retArr[2] = (double)nOfTetIndices;
+//		*retSize = nOfAllEntries;
+		
+		int* retArr = new int[5];
 
-		for (int i = 0; i < nOfPointsXYZ; i++) {
-			int j = 3 + i;
-			retArr[j] = outa.pointlist[i];
-		}
-		for (int i = 0; i < nOfTriIndices; i++) {
-			int j = 3 + nOfPointsXYZ+i;
-			retArr[j] = outa.trifacelist[i];
-		}
-		for (int i = 0; i < nOfTetIndices; i++) {
-			int j = 3 + nOfPointsXYZ + nOfTriIndices + i;
-			retArr[j] = outa.tetrahedronlist[i];
-		}
+		retArr[0] = nOfPoints;
+		retArr[1] = nOfFaces;
+		retArr[2] = nOfTet;
+		retArr[3] = nOfTetAttr;//
+		retArr[4] = nOfPointAttr;//always 1?
+		
 		
 		in.deinitialize();
-		outa.deinitialize();
-
+		
 		return retArr;
 		delete[] retArr;
+		
 	}
 
+	void getValues(double * vertXYZ, int * triIndices, int * tetIndices, double * regionAttr, int * pointMarker, int * faceMarker, double * pointAttr, int* neighborList) {
+
+		for (int i = 0; i < nOfPoints; i++) {
+			for (int j = 0; j < 3; j++) {
+				vertXYZ[i*3+j] = outa.pointlist[i*3+j];
+			}
+			if (computeRegionAttributes) {
+				for (int j = 0; j < nOfPointAttr; j++) {//more than 1 possible? +what for?
+					pointAttr[i*nOfPointAttr + j] = outa.pointattributelist[i*nOfPointAttr + j];
+				}
+			}
+			
+			pointMarker[i] = outa.pointmarkerlist[i];
+		}
+		for (int i = 0; i < nOfFaces; i++) {
+			for (int j = 0; j < 3; j++) {
+				triIndices[i*3+j] = outa.trifacelist[i * 3 + j];
+			}
+			faceMarker[i] = outa.trifacemarkerlist[i];
+		}
+		for (int i = 0; i < nOfTet; i++) {
+			for (int j = 0; j < 4; j++) {
+				tetIndices[i * 4 + j] = outa.tetrahedronlist[i * 4 + j];
+				if (computeNeighbors) {
+					neighborList[i * 4 + j] = outa.neighborlist[i * 4 + j];
+				}
+				
+			}
+			for (int j = 0; j < nOfTetAttr; j++) {//more than 1 possible? +what for?
+				regionAttr[i*nOfTetAttr+j] = outa.tetrahedronattributelist[i*nOfTetAttr+j];
+			}
+		
+		}
+
+		
+
+				
+		outa.deinitialize();
+
+	}
 
 	int ReleaseMemory(double* pArray)
 	{
